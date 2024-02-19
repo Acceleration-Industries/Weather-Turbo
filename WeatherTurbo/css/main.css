@@ -1,0 +1,339 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../static/photos/lamborghini_lights.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+.body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hover-effect {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+.hover-effect:hover {
+    background-image: url('../static/photos/hover_lamborghini.png');
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 2;
+}
+
+
+@keyframes hoverEffect {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.logo {
+    background-image: url('../static/photos/WEATHER_TURBO_OFFICIAL2.png');
+    height: 500px;
+    width: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position:top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.weather-search {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(2%);
+    background: rgba(0, 0, 0, 0.005);
+    padding: 20px;
+    border-radius: 20px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes glowingText {
+    0% {
+        text-shadow: 0 0 3px #ff0000;
+    }
+    50% {
+        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000, 0 0 25px #ff0000;
+    }
+    100% {
+        text-shadow: 0 02px #ff0000;
+    }
+}
+
+.weather-search:hover {
+    transform: translateY(-.3px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+    font-family: 'Sonic Turbo', sans-serif;
+    background-color: 0 20px 30px rgba(0, 0, 0, 0.5);
+}
+
+.city-input, .fetch-weather-btn {
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid black;
+    transition: box-shadow 0.7s ease, transform 0.7s ease, border 0.7s ease;
+    font-family: 'Sonic Turbo', sans-serif;
+    background: rgba(0, 0, 0, 0.001);
+    text-align: center;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    animation: glowingText 5s infinite;
+
+}
+
+.city-input:focus, .city-input:hover, .fetch-weather-btn:focus, .fetch-weather-btn:hover {
+    box-shadow: 0 0 10px red;
+    border: 2px solid #333;
+    border-radius: 37%;
+}
+
+.city-input::placeholder {
+  color: black;
+  transition: color 3.5s ease;
+}
+
+.city-input:hover::placeholder {
+    color: transparent;
+  }
+
+.city-input:focus {
+    border: 2px solid #e74c3c;
+}
+
+.fetch-weather-btn {
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid black;
+    transition: box-shadow 0.7s ease, transform 0.7s ease, border 0.7s ease;
+    font-family: 'Sonic Turbo', sans-serif;
+    background: rgba(0, 0, 0, 0.001);
+    text-align: center;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    animation: glowingText 5s infinite;
+    box-shadow: 0 0 10x white;
+}
+
+.city-input:hover, .fetch-weather-btn:hover {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.75);
+}
+
+.weather-info {
+    position: relative;
+}
+
+.close-btn {
+    font-family: 'Sonic Turbo', sans-serif;
+    position: absolute;
+    top: 2px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.001);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    animation: glowing 2s infinite;
+    border: #000;
+    border-radius: 100%;
+    border-width: .5px;
+}
+
+@keyframes glowing {
+    0% { box-shadow: 0 0 5px #ff0000; }
+    50% { box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000; }
+    100% { box-shadow: 0 0 5px #ff0000; }
+}
+
+.weather-display {
+    font-size: 40px;
+    font-family: 'Aircruiser Punch', sans-serif;
+    text-shadow:  #fa3f3fb0;
+    color: white;
+    text-shadow: 1px 1px 12px red;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-fill-color: #000;
+    padding: .5px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    flex-basis: inherit;
+    margin-bottom: 20%;
+    background: rgba(0, 0, 0, 0.001);
+    padding: 20px;
+    border-radius: 38%;
+    margin-bottom: 20%;
+    width: relative;
+    position: center;
+    justify-content: center;
+    display: flex;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.app-footer {
+    background-color: #000;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .weather-display {
+      font-size: 30px;
+    }
+}
+  
+@media (max-width: 480px) {
+    .weather-display {
+      font-size: 20px;
+    }
+}
+
+@keyframes fall {
+    0% {
+        transform: translate(-10vw, -100%);
+    }
+    100% {
+        transform: translate(10vw, 100vh);
+    }
+}
+
+.snow {
+    position: absolute;
+    bottom: 110%;
+    background-color: white;
+    border-radius: 100%;
+    animation-name: fall;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fallLarge {
+    0% {
+        transform: translateX(-70vw, -100vw);
+        top: 100vh;
+    }
+    100% {
+        transform: translateX(10vw, 100vh); 
+        top: 100vh;
+    }
+}
+
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.logo {
+    animation: beat 1.5s infinite;
+}
+
+@keyframes fallWide {
+    0% {
+        transform: translateX(-25vw);
+        top: -100px;
+    }
+    to {
+        transform: translateX(25vw);
+        top: 110vh;
+    }
+}
+
+@keyframes fallWide {
+    0% {
+        transform: translate(-50vw, 0);
+    }
+    100% {
+        transform: translate(40vw, 100vh);
+    }
+}
+
+@keyframes fallStraight {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes fallLeft {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-10vw, 100vh);
+    }
+}
+* {cursor: url(https://ani.cursors-4u.net/cursors/cur-13/cur1149.ani),
+     url(https://ani.cursors-4u.net/cursors/cur-13/cur1149.png), auto !important;}
