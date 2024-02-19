@@ -36,6 +36,21 @@ body, html {
     background-position: center bottom;
 }
 
+.hover_2 {
+  position: relative;
+  width: 100vw;
+  height: 100vw;
+ padding-top: 10px;
+
+}
+
+.hover_2:hover {
+    background-image: url('../static/photos/lightning-light-effect-transparent-background_313905-4529.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: initial;
+    
+}
 .hover-effect:hover {
     background-image: url('../static/photos/hover_lamborghini.png');
     margin: 0;
